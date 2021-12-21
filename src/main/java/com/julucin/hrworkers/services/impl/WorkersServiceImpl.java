@@ -2,7 +2,7 @@ package com.julucin.hrworkers.services.impl;
 
 import com.julucin.hrworkers.entities.WorkerEntity;
 import com.julucin.hrworkers.exceptions.NullIdException;
-import com.julucin.hrworkers.exceptions.thrower.WorkerExceptionsThrower;
+import com.julucin.hrworkers.exceptions.throwers.WorkerExceptionsThrower;
 import com.julucin.hrworkers.repositories.WorkersRepository;
 import com.julucin.hrworkers.services.WorkersService;
 import lombok.RequiredArgsConstructor;

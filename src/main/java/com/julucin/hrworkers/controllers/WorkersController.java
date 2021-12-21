@@ -1,6 +1,7 @@
 package com.julucin.hrworkers.controllers;
 
 import com.julucin.hrworkers.dtos.WorkerDto;
+import com.julucin.hrworkers.exceptions.factories.WorkerExceptionsFactory;
 import com.julucin.hrworkers.mappers.WorkersMapper;
 import com.julucin.hrworkers.services.WorkersService;
 import lombok.RequiredArgsConstructor;
@@ -25,7 +26,8 @@ public class WorkersController {
 
     @GetMapping("/{id}")
     public ResponseEntity<WorkerDto> retrieveById(@PathVariable Long id){
-        var worker = this.workersService.retrieveBy(id).map(WorkersMapper::toDto).orElse(new WorkerDto());
+        var worker = this.workersService.retrieveBy(id).map(WorkersMapper::toDto)
+                .orElseThrow(() -> WorkerExceptionsFactory.makeInstanceDoesNotExistException(id));
         return ResponseEntity.ok(worker);
     }
 
