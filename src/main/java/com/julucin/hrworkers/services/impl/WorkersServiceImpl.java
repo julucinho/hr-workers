@@ -49,7 +49,10 @@ public class WorkersServiceImpl implements WorkersService {
         log.info("Updating instance of worker. Id: ".concat(entity.getId().toString()));
         var id = ofNullable(entity.getId()).orElseThrow(NullIdException::new);
         var previouslySavedInstance = this.retrieveBy(id);
-        previouslySavedInstance.ifPresentOrElse(this.workersRepository::save, () -> WorkerExceptionsThrower.throwInstanceDoesNotExistException(id));
+        if (previouslySavedInstance.isPresent())
+            this.workersRepository.save(entity);
+        else
+            WorkerExceptionsThrower.throwInstanceDoesNotExistException(id);
     }
 
     @Override
