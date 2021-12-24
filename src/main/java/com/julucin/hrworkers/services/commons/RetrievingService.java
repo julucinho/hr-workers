@@ -1,4 +1,4 @@
-package com.julucin.hrworkers.services.common;
+package com.julucin.hrworkers.services.commons;
 
 import org.springframework.data.domain.Page;
 

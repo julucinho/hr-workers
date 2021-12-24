@@ -1,4 +1,4 @@
-package com.julucin.hrworkers.services.impl;
+package com.julucin.hrworkers.services.impls;
 
 import com.julucin.hrworkers.entities.WorkerEntity;
 import com.julucin.hrworkers.exceptions.NullIdException;

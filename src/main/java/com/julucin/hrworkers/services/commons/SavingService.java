@@ -1,4 +1,4 @@
-package com.julucin.hrworkers.services.common;
+package com.julucin.hrworkers.services.commons;
 
 public interface SavingService<E> {
 
